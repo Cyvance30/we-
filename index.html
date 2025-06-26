@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --maroon: #3c0d0d;
-      --dark-bg: #1a1a1a;
-      --light-text: #f8f8f8;
-      --accent: #cc3366;
+      --dark-blue: #0a192f;
+      --navy: #112240;
+      --accent: #64ffda;
+      --light-text: #e0e0e0;
     }
     * {
       margin: 0;
@@ -19,18 +19,21 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background-color: var(--dark-bg);
+      background-color: var(--dark-blue);
       color: var(--light-text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
     header {
-      background-color: var(--maroon);
-      padding: 1.5rem;
+      background-color: var(--navy);
+      padding: 2rem;
       text-align: center;
+      box-shadow: 0 0 10px var(--accent);
     }
     header h1 {
-      font-size: 2rem;
-      color: var(--light-text);
+      font-size: 2.5rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
     }
     nav {
       margin-top: 1rem;
@@ -40,28 +43,48 @@
       text-decoration: none;
       color: var(--light-text);
       font-weight: 600;
+      transition: color 0.3s;
     }
-    section {
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+    nav a:hover {
       color: var(--accent);
     }
-    .doodle {
-      margin: 2rem 0;
-      text-align: center;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+    h2 {
       font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      text-shadow: 0 0 5px var(--accent);
+    }
+    .floating-box {
+      background-color: var(--navy);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+      animation: float 3s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+    .floating-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px var(--accent);
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
     }
     footer {
-      background-color: var(--maroon);
+      background-color: var(--navy);
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #bbb;
+      box-shadow: 0 0 5px var(--accent);
     }
   </style>
 </head>
@@ -78,31 +101,38 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>We secure every single line of code. Cyvance is your digital armor in the cyber world — blending software engineering and SOC-level security under one banner.</p>
+    <div class="floating-box">
+      <p>We secure every single line of code. Cyvance is your digital armor in the cyber world — blending software engineering and SOC-level security under one banner.</p>
+    </div>
   </section>
 
   <section id="services">
     <h2>Services</h2>
-    <ul>
-      <li>Web Development (Frontend & Backend)</li>
-      <li>Cybersecurity Audits</li>
-      <li>SOC & Threat Analysis</li>
-      <li>Dark Web Monitoring</li>
-    </ul>
+    <div class="floating-box">
+      <ul>
+        <li>Web Development (Frontend & Backend)</li>
+        <li>Cybersecurity Audits</li>
+        <li>SOC & Threat Analysis</li>
+        <li>Dark Web Monitoring</li>
+      </ul>
+    </div>
   </section>
 
   <section id="achievements">
     <h2>Achievements</h2>
-    <p>✔️ Secured over 120 enterprise systems<br>
-    ✔️ 3x Awarded "Top SOC Innovator"<br>
-    ✔️ Featured in HackSecure Magazine 2024</p>
-    <div class="doodle">🔐💻🧠</div>
+    <div class="floating-box">
+      <p>✔️ Secured over 120 enterprise systems<br>
+      ✔️ 3x Awarded "Top SOC Innovator"<br>
+      ✔️ Featured in HackSecure Magazine 2024</p>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: hello@cyvance.io</p>
-    <p>Instagram: @cyvance_official</p>
+    <div class="floating-box">
+      <p>Email: hello@cyvance.io</p>
+      <p>Instagram: @cyvance_official</p>
+    </div>
   </section>
 
   <footer>
